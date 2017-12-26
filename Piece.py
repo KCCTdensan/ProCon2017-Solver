@@ -1,5 +1,5 @@
 class Piece:
-	_vertexes: list # ’¸“_(intŒ^)‚ğŠi”[‚µ‚½ƒŠƒXƒg
+	_vertexes: list # ’¸“_((int, int)Œ^)‚ğŠi”[‚µ‚½ƒŠƒXƒg
 
 	def __init__(self, vertexes: list):
 		if len(vertexes) < 3:

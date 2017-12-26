@@ -28,9 +28,9 @@ class PieceError(Exception):
 
 class PieceUtils:
 	@staticmethod
-	def marge(x: Piece, y: Piece):
+	def marge(x: Piece, y: Piece) -> Piece:
 		pass
 
 	@staticmethod
-	def rotate(x: Piece):
+	def rotate(x: Piece) -> Piece:
 		pass

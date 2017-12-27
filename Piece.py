@@ -4,8 +4,8 @@ class Piece:
 	def __init__(self, vertexes: list):
 		if len(vertexes) < 3:
 			#二次元図形には頂点が最低3つあるはずなんだよなぁ...
-			# [求: 情報] 日本語でpypyする方法
-			raise PieceError("Two dimensional figure should have at least three vertices ...")
+			# [求: 情報&修正] ↓を↑の日本語でpypyする方法
+			raise PieceError("Two dimensional figure should have at least three vertices...")
 
 		self._vertexes = vertexes
 

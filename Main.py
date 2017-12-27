@@ -1,4 +1,4 @@
-from Piece import *
+﻿from Piece import *
 from PuzzleSolver import *
 
 if __name__ == '__main__':

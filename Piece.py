@@ -17,6 +17,8 @@ class Piece:
 			raise PieceError("Two dimensional figure should have at least three vertices ...")
 
 		self._vertexes = vertexes
+		
+		# ここで角度算出等
 
 	# メソッド: 疑似コンストラクタ
 	#
@@ -32,6 +34,24 @@ class Piece:
 	# 戻り値	>> _vertexes :: [(int, int)]
 	def getVertexes(self) -> list:
 		return self._vertexes
+
+	# メソッド: 片を回転させる
+	def rotate(self):
+		pass
+
+	# メソッド: 片を裏返す
+	def flip(self):
+		pass
+
+	# メソッド: 片を移動させる
+	def move(self):
+		pass
+
+	# メソッド: 
+	#
+	# 戻り値	>> か否か :: bool
+	def isOnGrid(self) -> bool:
+		pass
 
 
 # クラス: Piece クラスに関する例外用
@@ -56,22 +76,12 @@ class PieceError(Exception):
 
 # クラス: Pieceクラスのオブジェクト（インスタンス）に対する操作等を提供
 class PieceUtils:
-	# メソッド: 
+	# メソッド: 片２つを結合して返す
 	#
-	# 引数	>> 
-	# 戻り値	>> 
-	#
-	# 発生の可能性のある例外	>> :: PieceError
-	@staticmethod
-	def marge(x: Piece, y: Piece) -> Piece:
-		pass
-
-	# メソッド: 
-	#
-	# 引数	>> 
-	# 戻り値	>> 
+	# 引数	>> 片２つ :: Piece -> Piece
+	# 戻り値	>> 結合された片 :: Piece
 	#
 	# 発生の可能性のある例外	>> :: 
 	@staticmethod
-	def rotate(x: Piece) -> Piece:
+	def marge(x: Piece, y: Piece) -> Piece:
 		pass

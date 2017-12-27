@@ -22,4 +22,7 @@ class PuzzleSolver:
 class PuzzleSolverUtils:
 	@staticmethod
 	def unwrapResult(result: list) -> list:
-		return [elem.getVertexes() for (_, elem) in enumerate(result)]
+		ret = []
+		for (index, elem) in enumerate(result):
+			ret.append(elem.getVertexes())
+		return ret

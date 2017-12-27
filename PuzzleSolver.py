@@ -1,7 +1,7 @@
-from Piece import *
+ï»¿from Piece import *
 
 class PuzzleSolver:
-	_pieces: list = [] #›Æ‚ßŠG•Ğ(PieceŒ^)‚ÌƒŠƒXƒg
+	_pieces: list = [] #åµŒã‚çµµç‰‡(Pieceå‹)ã®ãƒªã‚¹ãƒˆ
 
 	def new():
 		return PuzzleSolver()
@@ -9,14 +9,14 @@ class PuzzleSolver:
 	def appendPiece(self, piece: Piece):
 		self._pieces.append(piece)
 
-	# ‚±‚Ìƒƒ\ƒbƒh‚Ìˆ—‚ğ•À—ñ‰»(ˆ½‚Í•Às‰»)‚µ‚Ä‰ğ‚Ì“±o‚ğ‘¬‚ß‚é
-	# ƒAƒ‹ƒSƒŠƒYƒ€Ÿ‘æ‚Å‚·‚Ëª
+	# ã“ã®ãƒ¡ã‚½ãƒƒãƒ‰ã®å‡¦ç†ã‚’ä¸¦åˆ—åŒ–(æˆ–ã¯ä¸¦è¡ŒåŒ–)ã—ã¦è§£ã®å°å‡ºã‚’é€Ÿã‚ã‚‹
+	# ã‚¢ãƒ«ã‚´ãƒªã‚ºãƒ æ¬¡ç¬¬ã§ã™ã­â†‘
 	#
-	# •À—ñ‰»: ƒ}ƒ‹ƒ`ƒXƒŒƒbƒh‚Åˆ—‚ğs‚¤–
-	# •Às‰»: ƒ}ƒ‹ƒ`ƒvƒƒZƒX‚Åˆ—‚ğs‚¤–BƒvƒƒZƒX’PˆÊ‚Ì•ª—£‚É‚æ‚èAƒ}ƒ‹ƒ`ƒRƒA‚Åˆ—‰Â”\B
-	# QlURL >> https://qiita.com/castaneai/items/9cc33817419896667f34
+	# ä¸¦åˆ—åŒ–: ãƒãƒ«ãƒã‚¹ãƒ¬ãƒƒãƒ‰ã§å‡¦ç†ã‚’è¡Œã†äº‹
+	# ä¸¦è¡ŒåŒ–: ãƒãƒ«ãƒãƒ—ãƒ­ã‚»ã‚¹ã§å‡¦ç†ã‚’è¡Œã†äº‹ã€‚ãƒ—ãƒ­ã‚»ã‚¹å˜ä½ã®åˆ†é›¢ã«ã‚ˆã‚Šã€ãƒãƒ«ãƒã‚³ã‚¢ã§å‡¦ç†å¯èƒ½ã€‚
+	# å‚è€ƒURL >> https://qiita.com/castaneai/items/9cc33817419896667f34
 	def solve(self) -> list:
-		return self._pieces # æŠ¸‚¦‚¸ê_–·•Ô‚µ
+		return self._pieces # å–æ•¢ãˆãšé¸šéµ¡è¿”ã—
 
 
 class PuzzleSolverUtils:

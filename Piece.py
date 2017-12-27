@@ -1,10 +1,10 @@
-class Piece:
-	_vertexes: list # ’¸“_((int, int)Œ^)‚ğŠi”[‚µ‚½ƒŠƒXƒg
+ï»¿class Piece:
+	_vertexes: list # é ‚ç‚¹((int, int)å‹)ã‚’æ ¼ç´ã—ãŸãƒªã‚¹ãƒˆ
 
 	def __init__(self, vertexes: list):
 		if len(vertexes) < 3:
-			#“ñŸŒ³}Œ`‚É‚Í’¸“_‚ªÅ’á3‚Â‚ ‚é‚Í‚¸‚È‚ñ‚¾‚æ‚È‚Ÿ...
-			# [‹: î•ñ] “ú–{Œê‚Åpypy‚·‚é•û–@
+			#äºŒæ¬¡å…ƒå›³å½¢ã«ã¯é ‚ç‚¹ãŒæœ€ä½3ã¤ã‚ã‚‹ã¯ãšãªã‚“ã ã‚ˆãªã...
+			# [æ±‚: æƒ…å ±] æ—¥æœ¬èªã§pypyã™ã‚‹æ–¹æ³•
 			raise PieceError("Two dimensional figure should have at least three vertices ...")
 
 		self._vertexes = vertexes

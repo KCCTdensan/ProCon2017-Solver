@@ -1,5 +1,5 @@
-﻿from Piece import *
-from PuzzleSolver import *
+﻿from Search.Piece import *
+from Search.PuzzleSolver import *
 
 if __name__ == '__main__':
 	try:
@@ -12,5 +12,5 @@ if __name__ == '__main__':
 		
 		result = solver.solve()
 		print(PuzzleSolverUtils.unwrapResult(result))
-	except PieceError as pe:
-		print("PieceError: " + pe.getMessage())
+	except FigureError as pe:
+		print("FigureError: " + pe.getMessage())

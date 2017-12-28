@@ -1,6 +1,9 @@
-﻿class Piece:
+﻿import math
+import numpy as np
+
+class Piece:
 	_vertexes: list # 頂点((int, int)型)を格納したリスト
-	# ここに角度のデータを格納した変数等
+	_angles: list # 角度を格納したリスト
 
 	def __init__(self, vertexes: list):
 		if len(vertexes) < 3:
@@ -9,6 +12,16 @@
 		self._vertexes = vertexes
 
 		# ここで角度の算出等
+		for i,vertex in enumerate(vertexes):
+			vec_front = np.array(vertexes[(i + 1) % len(vertexes)]) - np.array(vertex)
+			vec_back = np.array(vertexes[(i - 1 + len(vertexes))]) - np.array(vertex)
+			inner_product = np.dot(vec_front,vec_back)
+			a=np.linalg.norm(vec_front)
+			b=np.linalg.norm(vec_back)
+			angle = math.acos(inner_product / np.linalg.norm(vec_front) * np.linalg.norm(vec_back))
+			#if judge.is_in_angle(self,vertex)==false:
+			#	angle = 2 * math.pi - angle
+			self._angles.append(angle)
 
 	def new(vertexes: list):
 		return Piece(vertexes)

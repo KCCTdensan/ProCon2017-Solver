@@ -18,7 +18,7 @@ class Piece:
 			inner_product = np.dot(vec_front,vec_back)
 			a=np.linalg.norm(vec_front)
 			b=np.linalg.norm(vec_back)
-			angle = math.acos(inner_product / np.linalg.norm(vec_front) * np.linalg.norm(vec_back))
+			angle = math.acos(inner_product / (np.linalg.norm(vec_front) * np.linalg.norm(vec_back)))
 			#if judge.is_in_angle(self,vertex)==false:
 			#	angle = 2 * math.pi - angle
 			self._angles.append(angle)

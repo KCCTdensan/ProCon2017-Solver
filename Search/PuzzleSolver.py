@@ -1,4 +1,5 @@
-﻿from Piece import *
+﻿from Search.Piece import *
+#from Search.Frame import *
 
 class PuzzleSolver:
 	_pieces: list = [] #嵌め絵片(Piece型)のリスト

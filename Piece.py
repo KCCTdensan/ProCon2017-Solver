@@ -12,16 +12,17 @@ class Piece:
 		self._vertexes = vertexes
 
 		# ここで角度の算出等
+		angles=[]
 		for i,vertex in enumerate(vertexes):
 			vec_front = np.array(vertexes[(i + 1) % len(vertexes)]) - np.array(vertex)
-			vec_back = np.array(vertexes[(i - 1 + len(vertexes))]) - np.array(vertex)
+			vec_back = np.array(vertexes[(i - 1 + len(vertexes)) % len(vertexes)]) - np.array(vertex)
 			inner_product = np.dot(vec_front,vec_back)
-			a=np.linalg.norm(vec_front)
-			b=np.linalg.norm(vec_back)
-			angle = math.acos(inner_product / (np.linalg.norm(vec_front) * np.linalg.norm(vec_back)))
+			rad = np.arccos(float(inner_product) / (np.linalg.norm(vec_front) * np.linalg.norm(vec_back)))
+			angle = np.rad2deg(rad)
 			#if judge.is_in_angle(self,vertex)==false:
 			#	angle = 2 * math.pi - angle
-			self._angles.append(angle)
+			angles.append(angle)
+		self._angles=angles
 
 	def new(vertexes: list):
 		return Piece(vertexes)

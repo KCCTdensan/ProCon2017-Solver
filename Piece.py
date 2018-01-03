@@ -2,7 +2,7 @@
 
 class Piece:
 	_vertexes: list # 頂点((int, int)型)を格納したリスト
-	_angles = [] # 角度を格納したリスト
+	_angles: list # 角度を格納したリスト
 
 	def __init__(self, vertexes: list):
 		if len(vertexes) < 3:
@@ -11,6 +11,7 @@ class Piece:
 		self._vertexes = vertexes
 
 		# ここで角度の算出等
+		self._angles = []
 		for i,vertex in enumerate(vertexes):
 			vec_front = np.array(vertexes[(i + 1) % len(vertexes)]) - np.array(vertex)
 			vec_back = np.array(vertexes[(i - 1 + len(vertexes)) % len(vertexes)]) - np.array(vertex)

@@ -1,4 +1,5 @@
 ﻿from Search.Figure import *
+import numpy
 
 class Piece (Figure):
 	# ここに角度のデータを格納した変数等
@@ -9,7 +10,8 @@ class Piece (Figure):
 		# ここで角度の算出等
 
 	def new(vertexes: list):
-		return Piece(vertexes)
+		#return Piece(vertexes)
+		return Piece(numpy.array(vertexes))
 
 	# 片を回転させる
 	def rotate(self):

@@ -42,7 +42,7 @@ class Window (tk.Frame):
 			text	= "配置情報取込",
 			command = lambda: print("[押下] 配置情報取込")
 		)
-		self._btn_placementinfo.grid(column = 0, row = 3)
+		self._btn_PlacementInfo.grid(column = 0, row = 3)
 
 		self._btn_quit = tk.Button(self,
 			text = "終了",

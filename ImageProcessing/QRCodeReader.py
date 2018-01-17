@@ -1,0 +1,2 @@
+class QRCodeReader:
+	pass

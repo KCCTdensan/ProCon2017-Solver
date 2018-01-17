@@ -17,6 +17,7 @@ class Figure:
 	def getAngles(self) -> list:
 		return self._angles
 
+
 class FigureError (Exception):
 	_message: str
 	

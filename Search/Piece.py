@@ -1,12 +1,13 @@
 ﻿from Search.Figure import *
 import numpy as np
+
 class Piece (Figure):
 	def __init__(self, vertexes: list):
 		super().__init__(vertexes)
 
-		# ここで角度の算出等
+		# 角度群の算出
 		self._angles = []
-		for i,vertex in enumerate(vertexes):
+		for i, vertex in enumerate(vertexes):
 			vec_front = np.array(vertexes[(i + 1) % len(vertexes)]) - np.array(vertex)
 			vec_back = np.array(vertexes[(i - 1 + len(vertexes)) % len(vertexes)]) - np.array(vertex)
 			inner_product = np.dot(vec_front,vec_back)

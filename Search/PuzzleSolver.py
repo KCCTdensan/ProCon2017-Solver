@@ -2,7 +2,7 @@
 #from Search.Frame import *
 
 class PuzzleSolver:
-	_pieces: list = [] #嵌め絵片(Piece型)のリスト
+	_pieces: list = [] #片のリスト
 
 	def new():
 		return PuzzleSolver()
@@ -10,7 +10,6 @@ class PuzzleSolver:
 	def appendPiece(self, piece: Piece):
 		self._pieces.append(piece)
 
-	# 参考 >> https://qiita.com/castaneai/items/9cc33817419896667f34
 	def solve(self) -> list:
 		return self._pieces # 取敢えず、蓄積した片のリストを返すだけ
 

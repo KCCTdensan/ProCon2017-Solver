@@ -32,7 +32,7 @@ class Piece (Figure):
 
 	# 片を移動させる
 	def move(self):
-		pass
+		print("aaaaaaa")
 
 	def isOnGrid(self) -> bool:
 		pass

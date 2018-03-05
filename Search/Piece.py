@@ -1,17 +1,26 @@
 ﻿from Search.Figure import *
-import numpy
+import numpy as np
 
 class Piece (Figure):
-	# ここに角度のデータを格納した変数等
-
 	def __init__(self, vertexes: list):
 		super().__init__(vertexes)
 
-		# ここで角度の算出等
+		# 角度群の算出
+		self._angles = []
+		for i, vertex in enumerate(vertexes):
+			vec_front = np.array(vertexes[(i + 1) % len(vertexes)]) - np.array(vertex)
+			vec_back = np.array(vertexes[(i - 1 + len(vertexes)) % len(vertexes)]) - np.array(vertex)
+			inner_product = np.dot(vec_front,vec_back)
+			rad = np.arccos(float(inner_product) / (np.linalg.norm(vec_front) * np.linalg.norm(vec_back)))
+			angle = np.rad2deg(rad)
+			if angle < 1.0:
+				raise FigureError("角度が1度未満")
+			#if judge.is_in_angle(self,vertex)==false: #外角だった場合
+			#	angle = 360.0 - angle
+			self._angles.append(angle)
 
 	def new(vertexes: list):
-		#return Piece(vertexes)
-		return Piece(numpy.array(vertexes))
+		return Piece(np.array(vertexes))
 
 	# 片を回転させる
 	def rotate(self):

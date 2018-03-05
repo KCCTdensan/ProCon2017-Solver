@@ -3,6 +3,7 @@
 from Window import *
 # from Search.Piece import *
 # from Search.PuzzleSolver import *
+# from Search.Judge import *
 
 if __name__ == '__main__':
 	root = tk.Tk()

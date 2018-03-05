@@ -20,7 +20,7 @@ class Piece (Figure):
 			self._angles.append(angle)
 
 	def new(vertexes: list):
-		return Piece(vertexes)
+		return Piece(np.array(vertexes))
 
 	# 片を回転させる
 	def rotate(self):

@@ -32,7 +32,12 @@ class Piece (Figure):
 
 	# 片を移動させる
 	def move(self):
-		print("aaaaaaa")
+		x = _vertexes[0][0]
+       		y = _vertexes[0][0]
+        	tx =_vertexes[int][0]
+        	ty =_vertexes[int][1]
+        	a = x + tx
+        	b = y + ty
 
 	def isOnGrid(self) -> bool:
 		pass

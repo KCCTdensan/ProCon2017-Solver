@@ -2,22 +2,21 @@
 import numpy as np
 
 class Piece (Figure):
-	def __init__(self, vertexes: list):
-		super().__init__(vertexes)
+	def __init__(self, vertexes: list):        
+		#複素数1から複素数2の原点を中心とした角
+		def angleBetweenComplexes(complex1, complex2):
+			return np.angle(complex2/complex1)
 
+		#ベクトル1からベクトル2の原点を中心とした角
+		def angleBetweenVectors(vector1, vector2):
+			return angleBetweenComplexes(vector1[0] + 1j*vector1[1], vector2[0] + 1j*vector2[1])
+
+		super().__init__(vertexes)
 		# 角度群の算出
 		self._angles = []
-		for i, vertex in enumerate(vertexes):
-			vec_front = np.array(vertexes[(i + 1) % len(vertexes)]) - np.array(vertex)
-			vec_back = np.array(vertexes[(i - 1 + len(vertexes)) % len(vertexes)]) - np.array(vertex)
-			inner_product = np.dot(vec_front,vec_back)
-			rad = np.arccos(float(inner_product) / (np.linalg.norm(vec_front) * np.linalg.norm(vec_back)))
-			angle = np.rad2deg(rad)
-			if angle < 1.0:
-				raise FigureError("角度が1度未満")
-			#if judge.is_in_angle(self,vertex)==false: #外角だった場合
-			#	angle = 360.0 - angle
-			self._angles.append(angle)
+		numVertexes = len(vertexes)
+		for i in range(0, numVertexes):
+			self._angles.append((np.rad2deg(angleBetweenVectors(np.array(vertexes[(i - 1 + numVertexes) % numVertexes]) - np.array(vertexes[i]), np.array(vertexes[(i + 1) % numVertexes]) - np.array(vertexes[i]))) + 360) % 360)
 
 	def new(vertexes: list):
 		return Piece(np.array(vertexes))

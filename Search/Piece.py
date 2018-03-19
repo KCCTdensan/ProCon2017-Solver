@@ -31,8 +31,12 @@ class Piece (Figure):
 		pass
 
 	# 片を移動させる
-	def move(self):
-		pass
+	def move(self,point):
+		for vertex in self.vertexes:
+			vertex[0] += point  
+			vertex[1] += point  
+		vertexes[0] + vertex[0]
+		vertexes[1] + vertex[1]
 
 	def isOnGrid(self) -> bool:
 		pass

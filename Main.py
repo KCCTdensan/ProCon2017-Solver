@@ -24,3 +24,4 @@ if __name__ == '__main__':
 	except FigureError as pe:
 		print("FigureError: " + pe.getMessage())
 """
+

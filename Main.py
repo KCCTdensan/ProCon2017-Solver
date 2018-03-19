@@ -5,10 +5,11 @@ from Window import *
 # from Search.PuzzleSolver import *
 # from Search.Judge import *
 
-if __name__ == '__main__':
+
+def main():
 	root = tk.Tk()
-	window =Window.new(master = root)
-	window.mainloop()
+	Window.new(master = root)
+	root.mainloop()
 
 """	# 以下はSolverの使い方を記述したものです
 	try:
@@ -27,3 +28,5 @@ if __name__ == '__main__':
 		print("FigureError: " + fe.getMessage())
 """
 
+if __name__ == '__main__':
+	main()

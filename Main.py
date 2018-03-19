@@ -21,7 +21,7 @@ if __name__ == '__main__':
 		
 		result = solver.solve()
 		print(PuzzleSolverUtils.unwrapResult(result))
-	except FigureError as pe:
-		print("FigureError: " + pe.getMessage())
+	except FigureError as fe:
+		print("FigureError: " + fe.getMessage())
 """
 

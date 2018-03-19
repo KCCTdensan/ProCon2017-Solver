@@ -2,11 +2,15 @@
 #from Search.Frame import *
 
 class PuzzleSolver:
+	_frame: Frame # 枠
 	_pieces: list = [] #片のリスト
 
 	def new():
 		return PuzzleSolver()
-	
+
+	def setFrame(self, frame: Frame):
+		self._frame = frame
+		
 	def appendPiece(self, piece: Piece):
 		self._pieces.append(piece)
 

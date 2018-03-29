@@ -7,8 +7,13 @@ class PuzzleSolver:
 
 	MergedPieces = [] #mergeしたpieceのリスト
 
-	def new():
-		return PuzzleSolver()
+	def new(frame=None,pieces=None):
+		solver = PuzzleSolver()
+		if frame is not None:
+			solver.setFrame(frame)
+		if pieces is not None:
+			solver._pieces = pieces
+		return solver
 
 	def setFrame(self, frame: Frame):
 		self._frame = frame

@@ -5,7 +5,7 @@ class Piece (Figure):
 	def __init__(self, vertexes: list):        
 		#複素数1から複素数2の原点を中心とした角(deg)
 		def angleBetweenComplexes(complex1, complex2):
-			return (np.rad2deg(np.angle(complex2/complex1)) + 360) % 360
+			return (np.angle(complex2/complex1, deg = True) + 360) % 360
 
 		#ベクトル1からベクトル2の原点を中心とした角(deg)
 		def angleBetweenVectors(vector1, vector2):

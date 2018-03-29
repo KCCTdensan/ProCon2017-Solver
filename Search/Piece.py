@@ -37,8 +37,12 @@ class Piece (Figure):
 		vertexes[0] + vertex[0]
 		vertexes[1] + vertex[1]
 
+	# ピースの各頂点がグリッド上に存在するか(値が整数値であるか)
 	def isOnGrid(self) -> bool:
-		pass
+		for vertex in vertexes:
+			if not(isinstance(vertex[0],int)and isinstance(vertex[1],int)):
+				return False
+		return True
 
 	def isInAngle(self) -> bool:
 		pass

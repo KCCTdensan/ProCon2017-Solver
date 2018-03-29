@@ -48,9 +48,6 @@ class Piece (Figure):
 				return False
 		return True
 
-	def isInAngle(self) -> bool:
-		pass
-
 
 class PieceUtils:
 	# ２片を結合する

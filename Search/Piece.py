@@ -27,7 +27,11 @@ class Piece (Figure):
 
 	# 片を裏返す
 	def flip(self):
-		pass
+		nextVertexes = []
+		offset = 2 * vertexes[0][0]
+		for vertex in vertexes:
+			nextVertexes.append((offset - vertex[0], vertex[1]))
+		vertexes = nextVertexes
 
 	# 片を移動させる
 	def move(self,point):
